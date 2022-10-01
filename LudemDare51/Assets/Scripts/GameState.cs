@@ -4,4 +4,5 @@ public enum GameState
     PLAYING,
     SUCCESS,
     FAIL,
+    WIN_GAME,
 }
