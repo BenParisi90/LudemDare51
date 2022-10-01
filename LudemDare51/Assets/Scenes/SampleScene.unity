@@ -1625,16 +1625,8 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4760226557133919284, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
-      propertyPath: _jumpForce
+      propertyPath: _moveSpeed
       value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4760226557133919284, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
-      propertyPath: _jumpGravity
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4760226557133919284, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
-      propertyPath: _maxFallSpeed
-      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4760226557133919285, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
       propertyPath: m_RootOrder

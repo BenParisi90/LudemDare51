@@ -15,10 +15,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Vector3 movement = Vector3.zero;
-        movement.z += InputManager.forward ? _moveSpeed : 0;
-        movement.z -= InputManager.backward ? _moveSpeed : 0;
-        movement.x -= InputManager.left ? _moveSpeed : 0;
-        movement.x += InputManager.right ? _moveSpeed : 0;
+        movement.z += InputManager.forward ? 1 : 0;
+        movement.z -= InputManager.backward ? 1 : 0;
+        movement.x -= InputManager.left ? 1 : 0;
+        movement.x += InputManager.right ? 1 : 0;
+        movement *= _moveSpeed * Time.deltaTime;
         _characterController.Move(movement);
     }
 }
