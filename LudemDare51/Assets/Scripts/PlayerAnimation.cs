@@ -6,12 +6,10 @@ public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
 
-    [SerializeField] private GameManager _gameManager;
-
     void Start()
     {
-        _gameManager.WinLevel.AddListener(WinAnim);
-        _gameManager.FailLevel.AddListener(FailAnim);
+        GameManager.WinLevel += WinAnim;
+        GameManager.FailLevel += FailAnim;
     }
 
     private void WinAnim()
