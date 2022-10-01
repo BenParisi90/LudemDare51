@@ -11,10 +11,15 @@ public class Timer : MonoBehaviour
     [SerializeField] private float _totalLevelTime = 10;
     private float _levelStartTime = 0;
     public float RemainingLevelTime => _remainingLevelTime;
-    private float _remainingLevelTime = 0;
+    private float _remainingLevelTime;
     private bool _started = false;
 
     public UnityEvent TimerExpired;
+
+    void Start()
+    {
+        _remainingLevelTime = _totalLevelTime;
+    }
 
     // Update is called once per frame
     void Update()

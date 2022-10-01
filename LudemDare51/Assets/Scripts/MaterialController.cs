@@ -10,6 +10,7 @@ public class MaterialController : MonoBehaviour
     void Start()
     {
         _environmentMaterial.SetFloat("_TotalTime", _timer.TotalLevelTime);
+        _environmentMaterial.SetFloat("_RemainingTime", _timer.TotalLevelTime);
     }
 
     // Update is called once per frame
