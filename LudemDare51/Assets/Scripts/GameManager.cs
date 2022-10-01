@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Transform _goalPositions;
     [SerializeField] private GameObject _winGameText;
+    [SerializeField] private Transform _environmentRoot;
     [SerializeField] private int _startingLevel;
     private int _levelIndex = 0;
     private int _levelCount;
@@ -34,6 +35,8 @@ public class GameManager : MonoBehaviour
         _levelCount = _goalPositions.childCount;
 
         _levelIndex = _startingLevel;
+
+
 
         SetupLevel();
     }
@@ -71,6 +74,10 @@ public class GameManager : MonoBehaviour
 
     private void SetupLevel()
     {
+        DisableAllLevels();
+        EnableLevel(_levelIndex);
+        EnableLevel(_levelIndex + 1);
+
         //if there are no more levels to set up, win the game
         if(_levelIndex < _levelCount)
         {
@@ -100,5 +107,23 @@ public class GameManager : MonoBehaviour
     {
         _player.position = _playerStartPosition;
         GameState = GameState.LEVEL_START;
+    }
+
+    private void DisableAllLevels()
+    {
+        for(int i = 0; i < _environmentRoot.childCount; i ++)
+        {
+            _environmentRoot.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
+    private void EnableLevel(int targetLevel)
+    {
+        if(targetLevel >= _environmentRoot.childCount)
+        {
+            return;
+        }
+        
+        _environmentRoot.GetChild(targetLevel).gameObject.SetActive(true);
     }
 }
