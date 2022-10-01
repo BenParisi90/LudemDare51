@@ -14,9 +14,15 @@ public class PlayerAnimation : MonoBehaviour
 
     void Update()
     {
-        _animator.SetBool("Running", transform.position != _prevPosition);
-        Vector3 movementDirection = transform.position - _prevPosition;
-        _animator.transform.rotation = Quaternion.LookRotation(movementDirection);
+        bool running = transform.position != _prevPosition;
+        _animator.SetBool("Running", running);
+        if(running)
+        {
+            Vector3 movementDirection = transform.position - _prevPosition;
+            movementDirection.y= 0;
+            _animator.transform.rotation = Quaternion.LookRotation(movementDirection);
+        }
+        
 
         _prevPosition = transform.position;
     }

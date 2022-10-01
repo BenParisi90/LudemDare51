@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 891041677}
   - component: {fileID: 891041676}
   - component: {fileID: 891041675}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891041674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.85, y: 4.56, z: 28.79}
+  m_LocalPosition: {x: 48, y: 4.56, z: 28.79}
   m_LocalScale: {x: 1.2246801, y: 15.407, z: 59.559998}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 1006234405}
   - component: {fileID: 1006234404}
   - component: {fileID: 1006234403}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -705,7 +705,7 @@ Transform:
   m_GameObject: {fileID: 1006234402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5, z: 28.79}
-  m_LocalScale: {x: 20, y: 1, z: 64.17}
+  m_LocalScale: {x: 109.864, y: 1, z: 64.17}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -815,7 +815,7 @@ GameObject:
   - component: {fileID: 1247076813}
   - component: {fileID: 1247076812}
   - component: {fileID: 1247076811}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Floor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -893,7 +893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247076810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.25, y: 4.56, z: 28.79}
+  m_LocalPosition: {x: -37.7, y: 4.56, z: 28.79}
   m_LocalScale: {x: 1.2246801, y: 15.407, z: 60.226}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1625,8 +1625,12 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4760226557133919284, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
-      propertyPath: _moveSpeed
-      value: 0.1
+      propertyPath: _gravity
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760226557133919284, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
+      propertyPath: _currentJumpSpeed
+      value: -0.10230343
       objectReference: {fileID: 0}
     - target: {fileID: 4760226557133919285, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
       propertyPath: m_RootOrder

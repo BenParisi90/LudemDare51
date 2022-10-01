@@ -380,8 +380,8 @@ MonoBehaviour:
   _moveSpeed: 15
   _characterController: {fileID: 4760226557133919274}
   _jumpForce: 0.1
-  _jumpGravity: 0.1
-  _maxFallSpeed: -0.1
+  _gravity: 0.1
+  _currentJumpSpeed: 0
 --- !u!114 &4760226557133919287
 MonoBehaviour:
   m_ObjectHideFlags: 0
