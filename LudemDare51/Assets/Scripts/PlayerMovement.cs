@@ -8,9 +8,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private CharacterController _characterController;
     [SerializeField] float _jumpForce = 1;
     [SerializeField] float _gravity;
-    [SerializeField] private float _currentJumpSpeed;
+    private float _currentJumpSpeed = 0;
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(GameManager.GameState != GameState.PLAYING)
         {
@@ -24,12 +24,10 @@ public class PlayerMovement : MonoBehaviour
         movement.x += InputManager.right ? 1 : 0;
         movement *= _moveSpeed * Time.deltaTime;
 
-        Debug.Log(IsGrounded());
         if(IsGrounded())
         {
             if(InputManager.jump)
             {
-                Debug.Log("jump");
                 _currentJumpSpeed = _jumpForce;
             }
         }

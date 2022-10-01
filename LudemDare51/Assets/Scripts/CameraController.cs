@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.SetPositionAndRotation(_playerTransform.position, _playerTransform.rotation);
 

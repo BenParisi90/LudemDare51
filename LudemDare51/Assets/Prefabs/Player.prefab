@@ -379,8 +379,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 15
   _characterController: {fileID: 4760226557133919274}
-  _jumpForce: 0.1
-  _gravity: 0.1
+  _jumpForce: 0.4
+  _gravity: 0.6
   _currentJumpSpeed: 0
 --- !u!114 &4760226557133919287
 MonoBehaviour:

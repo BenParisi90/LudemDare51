@@ -12,9 +12,10 @@ public class PlayerAnimation : MonoBehaviour
         GameManager.FailLevel += FailAnim;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         bool running = transform.position != _prevPosition;
+        Debug.Log(running + " " + transform.position.ToString("f4"));
         _animator.SetBool("Running", running);
         if(running)
         {
@@ -22,8 +23,6 @@ public class PlayerAnimation : MonoBehaviour
             movementDirection.y= 0;
             _animator.transform.rotation = Quaternion.LookRotation(movementDirection);
         }
-        
-
         _prevPosition = transform.position;
     }
 

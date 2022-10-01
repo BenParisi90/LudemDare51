@@ -1625,12 +1625,8 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4760226557133919284, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
-      propertyPath: _gravity
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4760226557133919284, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
       propertyPath: _currentJumpSpeed
-      value: -0.10230343
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4760226557133919285, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
       propertyPath: m_RootOrder
