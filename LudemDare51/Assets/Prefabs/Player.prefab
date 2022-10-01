@@ -823,6 +823,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e7e62bfc554104d41a14366e3fc9c68a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b6a707f0c20cb34d9fe9dbab682c285, type: 2}
     - target: {fileID: 919132149155446097, guid: e7e62bfc554104d41a14366e3fc9c68a, type: 3}
       propertyPath: m_Name
       value: PlayerHead
@@ -885,6 +889,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 41142eb72b448774b9e8bc2df5ea1608, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b6a707f0c20cb34d9fe9dbab682c285, type: 2}
     - target: {fileID: 919132149155446097, guid: 41142eb72b448774b9e8bc2df5ea1608, type: 3}
       propertyPath: m_Name
       value: PlayerBody
@@ -947,6 +955,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2bf6783f1e3cfc144947bd209cfb5916, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b6a707f0c20cb34d9fe9dbab682c285, type: 2}
     - target: {fileID: 919132149155446097, guid: 2bf6783f1e3cfc144947bd209cfb5916, type: 3}
       propertyPath: m_Name
       value: PlayerThigh
@@ -1009,6 +1021,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 790132e7dd26dd2489d85f07c7ceb4af, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b6a707f0c20cb34d9fe9dbab682c285, type: 2}
     - target: {fileID: 919132149155446097, guid: 790132e7dd26dd2489d85f07c7ceb4af, type: 3}
       propertyPath: m_Name
       value: PlayerCalf
@@ -1071,6 +1087,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 665e0ca57d456eb46b16d642859a52f1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b6a707f0c20cb34d9fe9dbab682c285, type: 2}
     - target: {fileID: 919132149155446097, guid: 665e0ca57d456eb46b16d642859a52f1, type: 3}
       propertyPath: m_Name
       value: PlayerUpperArm
@@ -1133,6 +1153,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2bf6783f1e3cfc144947bd209cfb5916, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b6a707f0c20cb34d9fe9dbab682c285, type: 2}
     - target: {fileID: 919132149155446097, guid: 2bf6783f1e3cfc144947bd209cfb5916, type: 3}
       propertyPath: m_Name
       value: PlayerThigh
@@ -1195,6 +1219,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b83b4698fca46f546a4e51df5f5831d2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b6a707f0c20cb34d9fe9dbab682c285, type: 2}
     - target: {fileID: 919132149155446097, guid: b83b4698fca46f546a4e51df5f5831d2, type: 3}
       propertyPath: m_Name
       value: PlayerForearm
@@ -1257,6 +1285,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 790132e7dd26dd2489d85f07c7ceb4af, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b6a707f0c20cb34d9fe9dbab682c285, type: 2}
     - target: {fileID: 919132149155446097, guid: 790132e7dd26dd2489d85f07c7ceb4af, type: 3}
       propertyPath: m_Name
       value: PlayerCalf
@@ -1319,6 +1351,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 665e0ca57d456eb46b16d642859a52f1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b6a707f0c20cb34d9fe9dbab682c285, type: 2}
     - target: {fileID: 919132149155446097, guid: 665e0ca57d456eb46b16d642859a52f1, type: 3}
       propertyPath: m_Name
       value: PlayerUpperArm
@@ -1381,6 +1417,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b83b4698fca46f546a4e51df5f5831d2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b6a707f0c20cb34d9fe9dbab682c285, type: 2}
     - target: {fileID: 919132149155446097, guid: b83b4698fca46f546a4e51df5f5831d2, type: 3}
       propertyPath: m_Name
       value: PlayerForearm
