@@ -7,8 +7,10 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     [SerializeField] private TextMeshPro _timerText; 
+    public float TotalLevelTime => _totalLevelTime;
     [SerializeField] private float _totalLevelTime = 10;
     private float _levelStartTime = 0;
+    public float RemainingLevelTime => _remainingLevelTime;
     private float _remainingLevelTime = 0;
     private bool _started = false;
 
