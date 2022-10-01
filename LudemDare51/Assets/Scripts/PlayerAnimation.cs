@@ -26,7 +26,6 @@ public class PlayerAnimation : MonoBehaviour
         horzPos.y = 0;
         float moveDistance = Vector3.Distance(horzPos, _prevHorzPosition);
         bool running = moveDistance >= _moveDistanceThreshold;
-        Debug.Log(moveDistance);
         _animator.SetBool("Running", running);
         if(running)
         {
