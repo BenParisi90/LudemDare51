@@ -857,7 +857,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cb41e08effe6454ea24a7e2b9dd1a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 963194227}
   _playerTransform: {fileID: 1129478064}
+  _minFieldOfView: 60
+  _maxFieldOfView: 100
+  _fieldOfViewSpeedChange: 0.1
+  _cameraMaxLocalPosition: {x: 0, y: 2.5, z: -2.5}
 --- !u!4 &1037184682
 Transform:
   m_ObjectHideFlags: 0
@@ -886,7 +891,7 @@ GameObject:
   m_Layer: 0
   m_Name: Position0
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1094,7 +1099,7 @@ GameObject:
   m_Layer: 0
   m_Name: Position2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1143,7 +1148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timerText: {fileID: 1425631404}
-  _totalLevelTime: 2
+  _totalLevelTime: 20
   TimerExpired:
     m_PersistentCalls:
       m_Calls: []
@@ -1665,7 +1670,7 @@ GameObject:
   m_Layer: 0
   m_Name: Position1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
