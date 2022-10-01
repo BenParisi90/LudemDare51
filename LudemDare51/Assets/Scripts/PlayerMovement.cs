@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _jumpForce = 1;
     [SerializeField] float _gravity;
     private float _currentJumpSpeed = 0;
+    public bool Grounded => _grounded;
+    private bool _grounded = true; 
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -24,7 +26,8 @@ public class PlayerMovement : MonoBehaviour
         movement.x += InputManager.right ? 1 : 0;
         movement *= _moveSpeed * Time.deltaTime;
 
-        if(IsGrounded())
+        _grounded = IsGrounded();
+        if(Grounded)
         {
             if(InputManager.jump)
             {
@@ -41,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         _characterController.Move(movement);
     }
 
-    bool IsGrounded()
+    private bool IsGrounded()
     {
         return Physics.CheckSphere(transform.position, 0.1f, LayerMask.GetMask("Environment"));
     }
