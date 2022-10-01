@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,10 +12,13 @@ public class GameManager : MonoBehaviour
 
     public static GameState GameState = GameState.LEVEL_START;
 
+    public UnityEvent WinLevel;
+    public UnityEvent FailLevel;
+
     void Start()
     {
-        _goal.GoalReached.AddListener(WinLevel);
-        _timer.TimerExpired.AddListener(FailLevel);
+        _goal.GoalReached.AddListener(Win);
+        _timer.TimerExpired.AddListener(Fail);
     }
 
     void Update()
@@ -32,15 +36,17 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void WinLevel()
+    public void Win()
     {
         GameState = GameState.SUCCESS;
-        _timer.StopTimer(); 
+        _timer.StopTimer();
+        WinLevel.Invoke();
     }
 
-    private void FailLevel()
+    private void Fail()
     {
         GameState = GameState.FAIL;
         _timer.StopTimer();
+        FailLevel.Invoke();
     }
 }
