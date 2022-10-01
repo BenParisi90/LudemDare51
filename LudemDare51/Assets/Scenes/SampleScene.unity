@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 891041677}
   - component: {fileID: 891041676}
   - component: {fileID: 891041675}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 1006234405}
   - component: {fileID: 1006234404}
   - component: {fileID: 1006234403}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -815,7 +815,7 @@ GameObject:
   - component: {fileID: 1247076813}
   - component: {fileID: 1247076812}
   - component: {fileID: 1247076811}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1596,6 +1596,18 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 2060711567689595616, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2060711567689595616, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2060711567689595616, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3265807702510156693, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.12375
@@ -1611,6 +1623,18 @@ PrefabInstance:
     - target: {fileID: 4760226557133919273, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760226557133919284, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
+      propertyPath: _jumpForce
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760226557133919284, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
+      propertyPath: _jumpGravity
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760226557133919284, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
+      propertyPath: _maxFallSpeed
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4760226557133919285, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
       propertyPath: m_RootOrder
