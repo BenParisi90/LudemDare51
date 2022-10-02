@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Timer _timer;
     [SerializeField] private Goal _goal;
     [SerializeField] private Transform _player;
+    [SerializeField] private KillFloor _killFloor;
 
     [SerializeField] private Transform _goalPositions;
     [SerializeField] private GameObject _winGameText;
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     {
         _goal.GoalReached.AddListener(Win);
         _timer.TimerExpired.AddListener(Fail);
+        _killFloor.HitKillFloor.AddListener(Fail);
         PlayerAnimEvents.WinAnimComplete += SetupLevel;
         PlayerAnimEvents.FailAnimComplete += ResetLevel;
 
