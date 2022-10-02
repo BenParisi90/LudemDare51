@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3593354192994161154
+--- !u!114 &-1127451421909115275
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnvironmentMaterial
+  m_Name: GripPadMaterial
   m_Shader: {fileID: -6465566751694194690, guid: b19903a420c14e543a914bcf4a850106, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -85,18 +85,18 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RemainingTime: 2.1892893
+    - _RemainingTime: 10
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Tightness: 150
-    - _TotalTime: 10
+    - _Tightness: 50
+    - _TotalTime: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AlarmColor: {r: 1, g: 0, b: 0, a: 0}
+    - _AlarmColor: {r: 1, g: 0.5692457, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _InnerColor: {r: 0.06882637, g: 0.08428325, b: 0.2735849, a: 0}
-    - _OuterColor: {r: 0.47798735, g: 0.8608226, b: 1, a: 0}
+    - _InnerColor: {r: 0.0062266067, g: 0.03773582, b: 0, a: 0}
+    - _OuterColor: {r: 0.02663517, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
