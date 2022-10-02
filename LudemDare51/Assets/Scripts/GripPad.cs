@@ -23,6 +23,7 @@ public class GripPad : MonoBehaviour
             _triggerCollider.gameObject.SetActive(false);
             _nonTriggerCollider.gameObject.SetActive(false);
             ParticleController.Instance.Shatter(transform.position, transform.rotation);
+            PlayerMovement.Instance.ShatterSound.Play();
         }
     }
 }

@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _jumpForce = 1;
     [SerializeField] float _gravity;
     [SerializeField] AudioSource _jumpSound;
+    [SerializeField] AudioSource _gripSound;
+    public AudioSource ShatterSound => _shatterSound;
+    [SerializeField] AudioSource _shatterSound;
     private float _currentJumpSpeed = 0;
     private bool _hasJumped = false;
     public bool Grounded => _grounded;
@@ -94,5 +97,6 @@ public class PlayerMovement : MonoBehaviour
         _lastGripTime = Time.time;
         _currentJumpSpeed = 0;
         _currentGripPad = gripPad;
+        _gripSound.Play();
     }
 }
