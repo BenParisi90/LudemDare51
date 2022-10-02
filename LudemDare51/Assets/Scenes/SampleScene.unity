@@ -11787,7 +11787,7 @@ MonoBehaviour:
   _goalPositions: {fileID: 1918853578}
   _winGameText: {fileID: 1498655848}
   _environmentRoot: {fileID: 1839824324}
-  _startingLevel: 2
+  _startingLevel: 0
 --- !u!4 &1744012104
 Transform:
   m_ObjectHideFlags: 0
