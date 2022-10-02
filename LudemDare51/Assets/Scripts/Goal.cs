@@ -8,6 +8,7 @@ public class Goal : MonoBehaviour
     [SerializeField] private GameObject _player;
     [SerializeField] private ParticleSystem _particleSysytem;
     [SerializeField] private GameObject _ringModel;
+    [SerializeField] private AudioSource _goalSound;
 
     public UnityEvent GoalReached;
 
@@ -17,6 +18,7 @@ public class Goal : MonoBehaviour
         {
             _ringModel.SetActive(false);
             _particleSysytem.Play();
+            _goalSound.Play();
             GoalReached.Invoke();
         }
     }

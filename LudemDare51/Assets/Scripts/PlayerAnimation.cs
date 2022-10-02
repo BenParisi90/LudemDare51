@@ -4,11 +4,13 @@ public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] AudioSource _footstepSound;
 
 
     private Vector3 _prevHorzPosition;
     private float _prevVertPos;
     private float _moveDistanceThreshold = 0.01f;
+    private bool _footstepSoundPlaying = false;
 
     void Start()
     {
@@ -39,6 +41,28 @@ public class PlayerAnimation : MonoBehaviour
         bool inAir = !_playerMovement.Grounded;
         _animator.SetBool("InAir", inAir);
         _prevVertPos = transform.position.y;
+
+        if(inAir)
+        {
+            if(_footstepSoundPlaying)
+            {
+                _footstepSound.Stop();
+                _footstepSoundPlaying = false;
+            }
+        }
+        else
+        {
+            if(running && !_footstepSoundPlaying)
+            {
+                _footstepSound.Play();
+                _footstepSoundPlaying = true;
+            }
+            else if(!running && _footstepSoundPlaying)
+            {
+                _footstepSound.Stop();
+                _footstepSoundPlaying = false;
+            }
+        }
     }
 
     private void WinAnim()

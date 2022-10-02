@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private CharacterController _characterController;
     [SerializeField] float _jumpForce = 1;
     [SerializeField] float _gravity;
+    [SerializeField] AudioSource _jumpSound;
     private float _currentJumpSpeed = 0;
     public bool Grounded => _grounded;
     private bool _grounded = true; 
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
             if(InputManager.jump)
             {
                 _currentJumpSpeed = _jumpForce;
+                _jumpSound.Play();
             }
         }
         else
