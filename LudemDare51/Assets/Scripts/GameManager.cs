@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     {
         GameState = GameState.SUCCESS;
         _timer.StopTimer();
+        _timer.ResetTimer();
         _levelIndex ++;
         _player.position = _goal.transform.position;
         WinLevel.Invoke();

@@ -36,6 +36,11 @@ public class Timer : MonoBehaviour
         }
     }
 
+    public void ResetTimer()
+    {
+        _remainingLevelTime = _totalLevelTime;
+    }
+
     public void StartTimer()
     {
         _levelStartTime = Time.time;
