@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _startingLevel;
     [SerializeField] private AudioSource _failSound;
     [SerializeField] private TextMeshPro _livesText; 
+    [SerializeField] private AudioSource _gameplayMusic;
+
+    bool _gameplayMusicStarted = false;
+    [SerializeField] private AudioSource _winMusic;
+
     private int _levelIndex = 0;
     private int _levelCount;
 
@@ -108,6 +113,9 @@ public class GameManager : MonoBehaviour
         {
             GameState = GameState.WIN_GAME;
             _winGameText.SetActive(true);
+            _gameplayMusicStarted = false;
+            _gameplayMusic.Stop();
+            _winMusic.Play();
         }
         
     }
@@ -118,6 +126,11 @@ public class GameManager : MonoBehaviour
         GameState = GameState.PLAYING;
         _playerStartPosition = _player.position;
         _livesText.gameObject.SetActive(false);
+        if(!_gameplayMusicStarted)
+        {
+            _gameplayMusic.Play();
+            _gameplayMusicStarted = true;
+        }
     }
 
     private void Reset()
@@ -131,6 +144,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            _gameplayMusicStarted = false;
+            _gameplayMusic.Stop();
             _levelIndex = 0;
             _player.position = _playerGameStartPosition;
             _lives = 3;
