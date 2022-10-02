@@ -54,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
             if(Grounded)
             {
                 _currentGripPad = null;
+                _currentJumpSpeed = 0;
             }
             if(InputManager.jump && !_hasJumped)
             {
@@ -109,6 +110,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _currentGripPad = null;
         _gripping = false;
-        
+
     }
 }
