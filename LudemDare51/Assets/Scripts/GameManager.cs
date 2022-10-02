@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _winGameText;
     [SerializeField] private Transform _environmentRoot;
     [SerializeField] private int _startingLevel;
+    [SerializeField] private AudioSource _failSound;
     private int _levelIndex = 0;
     private int _levelCount;
 
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
     {
         GameState = GameState.FAIL;
         _timer.StopTimer();
+        _failSound.Play();
         FailLevel.Invoke();
     }
 
