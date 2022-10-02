@@ -24,14 +24,15 @@ public class GameManager : MonoBehaviour
 
     public static UnityAction WinLevel;
     public static UnityAction FailLevel;
+    public static UnityAction ResetLevel;
 
     void Start()
     {
         _goal.GoalReached.AddListener(Win);
         _timer.TimerExpired.AddListener(Fail);
         _killFloor.HitKillFloor.AddListener(Fail);
-        PlayerAnimEvents.WinAnimComplete += SetupLevel;
-        PlayerAnimEvents.FailAnimComplete += ResetLevel;
+        PlayerAnimEvents.WinAnimComplete += Setup;
+        PlayerAnimEvents.FailAnimComplete += Reset;
 
         _winGameText.SetActive(false);
 
@@ -41,7 +42,7 @@ public class GameManager : MonoBehaviour
 
 
 
-        SetupLevel();
+        Setup();
     }
 
     void Update()
@@ -51,7 +52,7 @@ public class GameManager : MonoBehaviour
             case GameState.LEVEL_START:
                 if(Input.anyKeyDown)
                 {
-                    BeginLevel();
+                    Begin();
                     
                 }
                 break;
@@ -73,13 +74,15 @@ public class GameManager : MonoBehaviour
     {
         GameState = GameState.FAIL;
         _timer.StopTimer();
+        _timer.ResetTimer();
         _failSound.Play();
         FailLevel.Invoke();
     }
 
-    private void SetupLevel()
+    private void Setup()
     {
         DisableAllLevels();
+        EnableLevel(_levelIndex - 1);
         EnableLevel(_levelIndex);
         EnableLevel(_levelIndex + 1);
 
@@ -102,15 +105,16 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void BeginLevel()
+    private void Begin()
     {
         _timer.StartTimer();
         GameState = GameState.PLAYING;
         _playerStartPosition = _player.position;
     }
 
-    private void ResetLevel()
+    private void Reset()
     {
+        ResetLevel.Invoke();
         _player.position = _playerStartPosition;
         GameState = GameState.LEVEL_START;
     }
@@ -125,6 +129,10 @@ public class GameManager : MonoBehaviour
 
     private void EnableLevel(int targetLevel)
     {
+        if(targetLevel < 0)
+        {
+            return;
+        }
         if(targetLevel >= _environmentRoot.childCount)
         {
             return;

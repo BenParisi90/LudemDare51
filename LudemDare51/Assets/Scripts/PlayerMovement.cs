@@ -21,12 +21,12 @@ public class PlayerMovement : MonoBehaviour
     private bool _gripping = false;
     private bool _canGrip = true;
     private float _lastGripTime = 0;
-    private float _minTimeBetweenGrips = 0.5f;
     private GripPad _currentGripPad;
 
     void Start()
     {
         Instance = this;
+        GameManager.ResetLevel += ResetLevel;
     }
 
     // Update is called once per frame
@@ -51,6 +51,10 @@ public class PlayerMovement : MonoBehaviour
         _grounded = IsGrounded();
         if(Grounded || _gripping)
         {
+            if(Grounded)
+            {
+                _currentGripPad = null;
+            }
             if(InputManager.jump && !_hasJumped)
             {
                 _currentJumpSpeed = _jumpForce;
@@ -85,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void AttemptGrip(GripPad gripPad)
     {
-        if(Time.time - _lastGripTime < _minTimeBetweenGrips)
+        if(gripPad == _currentGripPad)
         {
             return;
         }
@@ -99,5 +103,12 @@ public class PlayerMovement : MonoBehaviour
         _currentGripPad = gripPad;
         gripPad.PlayGripPadAnim();
         _gripSound.Play();
+    }
+
+    private void ResetLevel()
+    {
+        _currentGripPad = null;
+        _gripping = false;
+        
     }
 }

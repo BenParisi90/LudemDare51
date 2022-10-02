@@ -16,6 +16,11 @@ public class Timer : MonoBehaviour
 
     public UnityEvent TimerExpired;
 
+    [SerializeField] private AudioSource _alarmSound;
+    private bool _alarmPlayed = false;
+    private float _alarmTime = 2;
+
+
     void Start()
     {
         _remainingLevelTime = _totalLevelTime;
@@ -28,6 +33,11 @@ public class Timer : MonoBehaviour
         {
             _remainingLevelTime -= Time.deltaTime;
             _timerText.text = _remainingLevelTime.ToString("F2");
+            if(_remainingLevelTime <= _alarmTime && !_alarmPlayed)
+            {
+                _alarmSound.Play();
+                _alarmPlayed = true;
+            }
             if(_remainingLevelTime <= 0)
             {
                 _timerText.text = "0.00";
@@ -39,6 +49,8 @@ public class Timer : MonoBehaviour
     public void ResetTimer()
     {
         _remainingLevelTime = _totalLevelTime;
+        _alarmPlayed = false;
+        _alarmSound.Stop();
     }
 
     public void StartTimer()

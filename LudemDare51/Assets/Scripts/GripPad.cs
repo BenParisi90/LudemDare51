@@ -7,9 +7,14 @@ public class GripPad : MonoBehaviour
     [SerializeField] private bool _breakable = false;
     [SerializeField] private Collider _triggerCollider;
     [SerializeField] private Collider _nonTriggerCollider;
+
+    void Start()
+    {
+        GameManager.ResetLevel += Reset;
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
         if(other.gameObject.name == "Player")
         {
             PlayerMovement.Instance.AttemptGrip(this);
@@ -30,5 +35,11 @@ public class GripPad : MonoBehaviour
             ParticleController.Instance.Shatter(transform.position, transform.rotation);
             PlayerMovement.Instance.ShatterSound.Play();
         }
+    }
+
+    void Reset()
+    {
+        _triggerCollider.gameObject.SetActive(true);
+        _nonTriggerCollider.gameObject.SetActive(true);
     }
 }
