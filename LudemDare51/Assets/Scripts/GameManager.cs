@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource _failSound;
     [SerializeField] private TextMeshPro _livesText; 
     [SerializeField] private AudioSource _gameplayMusic;
+    [SerializeField] private Animator _playerAnimator;
 
     bool _gameplayMusicStarted = false;
     [SerializeField] private AudioSource _winMusic;
@@ -116,6 +117,7 @@ public class GameManager : MonoBehaviour
             _gameplayMusicStarted = false;
             _gameplayMusic.Stop();
             _winMusic.Play();
+            _playerAnimator.Play("VictoryDance");
         }
         
     }

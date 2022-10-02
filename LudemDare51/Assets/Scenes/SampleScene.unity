@@ -7176,6 +7176,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4338141121538186023, guid: 25ab0a3476d71034d9105bc15cd42315, type: 3}
   m_PrefabInstance: {fileID: 62937816}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &247217377 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4760226558084633760, guid: 75eaae1bdff39ad4397cc68e880ddeae, type: 3}
+  m_PrefabInstance: {fileID: 4760226558252901253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &251215999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52674,10 +52679,11 @@ MonoBehaviour:
   _goalPositions: {fileID: 1918853578}
   _winGameText: {fileID: 1498655848}
   _environmentRoot: {fileID: 1839824324}
-  _startingLevel: 0
+  _startingLevel: 14
   _failSound: {fileID: 740189127}
   _livesText: {fileID: 4760226558252901254}
   _gameplayMusic: {fileID: 971289012}
+  _playerAnimator: {fileID: 247217377}
   _winMusic: {fileID: 1381760166}
 --- !u!4 &1744012104
 Transform:
