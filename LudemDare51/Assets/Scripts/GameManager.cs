@@ -118,6 +118,7 @@ public class GameManager : MonoBehaviour
             _gameplayMusic.Stop();
             _winMusic.Play();
             _playerAnimator.Play("VictoryDance");
+            _goal.gameObject.SetActive(false);
         }
         
     }
