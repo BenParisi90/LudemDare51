@@ -15,10 +15,11 @@ public class PlayerMovement : MonoBehaviour
     public bool Grounded => _grounded;
     private bool _grounded = true; 
     
-    public bool Gripping = false;
+    private bool _gripping = false;
     private bool _canGrip = true;
     private float _lastGripTime = 0;
     private float _minTimeBetweenGrips = 0.5f;
+    private GripPad _currentGripPad;
 
     void Start()
     {
@@ -35,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movement = Vector3.zero;
 
-        if(!Gripping)
+        if(!_gripping)
         {
             movement.z += InputManager.forward ? 1 : 0;
             movement.z -= InputManager.backward ? 1 : 0;
@@ -45,14 +46,18 @@ public class PlayerMovement : MonoBehaviour
         }
 
         _grounded = IsGrounded();
-        if(Grounded || Gripping)
+        if(Grounded || _gripping)
         {
             if(InputManager.jump && !_hasJumped)
             {
                 _currentJumpSpeed = _jumpForce;
                 _jumpSound.Play();
                 _hasJumped = true;
-                Gripping = false;
+                if(_gripping)
+                {
+                    _gripping = false;
+                    _currentGripPad.JumpOff();
+                }
             }
         }
         else
@@ -75,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
         return Physics.CheckSphere(transform.position, 0.1f, LayerMask.GetMask("Environment"));
     }
 
-    public void AttemptGrip()
+    public void AttemptGrip(GripPad gripPad)
     {
         if(Time.time - _lastGripTime < _minTimeBetweenGrips)
         {
@@ -85,8 +90,9 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        Gripping = true;
+        _gripping = true;
         _lastGripTime = Time.time;
         _currentJumpSpeed = 0;
+        _currentGripPad = gripPad;
     }
 }
