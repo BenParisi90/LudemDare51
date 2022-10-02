@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,10 +16,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform _environmentRoot;
     [SerializeField] private int _startingLevel;
     [SerializeField] private AudioSource _failSound;
+    [SerializeField] private TextMeshPro _livesText; 
     private int _levelIndex = 0;
     private int _levelCount;
 
     private Vector3 _playerStartPosition = Vector3.zero;
+    private Vector3 _playerGameStartPosition = Vector3.zero;
 
     public static GameState GameState = GameState.LEVEL_START;
 
@@ -26,8 +29,11 @@ public class GameManager : MonoBehaviour
     public static UnityAction FailLevel;
     public static UnityAction ResetLevel;
 
+    private float _lives = 3;
+
     void Start()
     {
+        _playerGameStartPosition = _player.position;
         _goal.GoalReached.AddListener(Win);
         _timer.TimerExpired.AddListener(Fail);
         _killFloor.HitKillFloor.AddListener(Fail);
@@ -76,6 +82,7 @@ public class GameManager : MonoBehaviour
         _timer.StopTimer();
         _timer.ResetTimer();
         _failSound.Play();
+        _lives --;
         FailLevel.Invoke();
     }
 
@@ -110,13 +117,26 @@ public class GameManager : MonoBehaviour
         _timer.StartTimer();
         GameState = GameState.PLAYING;
         _playerStartPosition = _player.position;
+        _livesText.gameObject.SetActive(false);
     }
 
     private void Reset()
     {
-        ResetLevel.Invoke();
-        _player.position = _playerStartPosition;
-        GameState = GameState.LEVEL_START;
+        if(_lives > 0)
+        {
+            ResetLevel.Invoke();
+            _player.position = _playerStartPosition;
+            GameState = GameState.LEVEL_START;
+            ShowLivesText();
+        }
+        else
+        {
+            _levelIndex = 0;
+            _player.position = _playerGameStartPosition;
+            _lives = 3;
+            Setup();
+        }
+        
     }
 
     private void DisableAllLevels()
@@ -139,5 +159,11 @@ public class GameManager : MonoBehaviour
         }
 
         _environmentRoot.GetChild(targetLevel).gameObject.SetActive(true);
+    }
+
+    private void ShowLivesText()
+    {
+        _livesText.text = $"{_lives} lives left";
+        _livesText.gameObject.SetActive(true);
     }
 }
