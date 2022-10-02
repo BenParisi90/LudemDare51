@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
         //if there are no more levels to set up, win the game
         if(_levelIndex < _levelCount)
         {
+            _goal.SetGoal(_goalPositions.GetChild(_levelIndex).position);
             _goal.transform.position = _goalPositions.GetChild(_levelIndex).position;
             if(_levelIndex > 0)
             {
@@ -123,7 +124,7 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        
+
         _environmentRoot.GetChild(targetLevel).gameObject.SetActive(true);
     }
 }
