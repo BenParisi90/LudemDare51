@@ -52679,7 +52679,7 @@ MonoBehaviour:
   _goalPositions: {fileID: 1918853578}
   _winGameText: {fileID: 1498655848}
   _environmentRoot: {fileID: 1839824324}
-  _startingLevel: 14
+  _startingLevel: 0
   _failSound: {fileID: 740189127}
   _livesText: {fileID: 4760226558252901254}
   _gameplayMusic: {fileID: 971289012}
