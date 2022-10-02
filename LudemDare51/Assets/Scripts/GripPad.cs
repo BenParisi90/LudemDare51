@@ -16,6 +16,11 @@ public class GripPad : MonoBehaviour
         }
     }
 
+    public void PlayGripPadAnim()
+    {
+        MaterialController.Instance.StartGrip();
+    }
+
     public void JumpOff()
     {
         if(_breakable)

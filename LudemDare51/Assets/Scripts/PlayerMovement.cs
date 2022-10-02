@@ -97,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
         _lastGripTime = Time.time;
         _currentJumpSpeed = 0;
         _currentGripPad = gripPad;
+        gripPad.PlayGripPadAnim();
         _gripSound.Play();
     }
 }
