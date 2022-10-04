@@ -138,13 +138,13 @@ public class GameManager : MonoBehaviour
 
     private void Reset()
     {
-        if(_lives > 0)
-        {
+        //if(_lives > 0)
+        //{
             ResetLevel.Invoke();
             _player.position = _playerStartPosition;
             GameState = GameState.LEVEL_START;
-            ShowLivesText();
-        }
+            //ShowLivesText();
+        /*}
         else
         {
             _gameplayMusicStarted = false;
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
             _player.position = _playerGameStartPosition;
             _lives = 3;
             Setup();
-        }
+        }*/
         
     }
 
